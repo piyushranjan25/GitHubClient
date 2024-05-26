@@ -1,0 +1,29 @@
+<div class="mainContainer w-full h-full">
+  <div *ngIf="utils.showLoading" class="animationLoader">
+    <!-- <div class="logoloading"></div> -->
+
+    <!-- Skeleton-Loader starts here -->
+    <div class="fixed inset-0 flex bg-gray-200 z-50">
+      <div class="max-w-screen-xl w-full p-8">
+        <div class="flex items-center space-x-4 mt-16">
+          <div class="w-[13rem] h-[13rem] rounded-full bg-gray-300 animate-pulse"></div>
+          <div class="flex-1 py-4 space-y-2">
+            <div class="w-full h-4 bg-gray-300 rounded animate-pulse"></div>
+            <div class="w-full h-4 bg-gray-300 rounded animate-pulse"></div>
+            <div class="w-3/4 h-4 bg-gray-300 rounded animate-pulse"></div>
+          </div>
+        </div>
+        <div class="flex-1 py-4 space-y-2">
+          <div class="w-full h-4 bg-gray-300 rounded animate-pulse"></div>
+          <div class="w-full h-4 bg-gray-300 rounded animate-pulse"></div>
+          <div class="w-full h-4 bg-gray-300 rounded animate-pulse"></div>
+          <div class="w-3/4 h-4 bg-gray-300 rounded animate-pulse"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Skeleton-Loader end here -->
+
+  </div>
+  <app-header></app-header>
+  <app-home-page></app-home-page>
+</div>
