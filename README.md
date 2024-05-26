@@ -7,8 +7,10 @@ Then create an angular app and name it according to your choice using the comman
 Then jump into the app directory by writing the command `cd your-choice`
 
 After that run the following commands subsequently while being in the same directory.
+
 `npm install @angular/material` 
 `npm install ngx-pagination`
+
 Subsequently, update the `app.module.ts` by importing all the required `@angular/material` components and `ngx-pagination` component.
 
 ## Development server
