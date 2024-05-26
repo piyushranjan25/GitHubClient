@@ -77,7 +77,7 @@ export class ApiService {
     this.utils.stopLoader();
 
     // snackbar to show error
-    this.snackBar.open('Invalid User! Please try valid user name', 'X');
+    this.snackBar.open(errorMessage, 'X');
     
     return throwError(() => new Error(errorMessage)); 
   }
