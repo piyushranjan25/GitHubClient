@@ -1,6 +1,6 @@
 # GitHubclient
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.
 
 
 Then create an angular app and name it according to your choice using the command `ng new your-choice`
