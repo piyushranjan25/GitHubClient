@@ -23,12 +23,12 @@
           class="form-control leading-[0.5] h-[2.7rem] focus:outline-none border-[#ced4da] border-[2px] pl-[10px] rounded-[6px]"
           type="text"
           placeholder="GitHub User"
-          [formControl]="name"
+          [(ngModel)]="name"
         />
         <button
           class="btn btn-sm btn-dark ml-[10px] h-[2.7rem] w-[100px] text-[16px] leading-[1.5] text-[1rem] text-white bg-[#8f9295] rounded-[6px]"
           (click)="getUserData()"
-          [disabled]="!name.value"
+          [disabled]="!name"
         >
           Search
         </button>
