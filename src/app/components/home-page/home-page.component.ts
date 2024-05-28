@@ -1,5 +1,4 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
 import { UtilsComponent } from '../shared/utils/utils.component';
 import { ApiService } from 'src/app/services/api.service';
 @Component({
@@ -11,7 +10,7 @@ export class HomePageComponent implements OnInit {
 
   constructor(public utils: UtilsComponent, private apiSvc: ApiService, private cdRef: ChangeDetectorRef) { }
 
-  name = new FormControl('');
+  name: string = '';
   // var to store user data
   userData = {
     name: '',
@@ -49,8 +48,8 @@ export class HomePageComponent implements OnInit {
   // function to reset values when page refershed
   resetVar() {
     var ref = this;
-    ref.utils.startLoader();;
-    ref.name.setValue('');
+    ref.utils.startLoader();
+    ref.name = '';
     ref.userData = {
       name: '',
       bio: '',
@@ -95,7 +94,7 @@ export class HomePageComponent implements OnInit {
   // function to get user profile data 
   getUserData() {
     this.utils.startLoader();
-    this.apiSvc.fetchUserInfo(this.name.value).subscribe(data => {
+    this.apiSvc.fetchUserInfo(this.name).subscribe(data => {
       this.utils.dataTouched = true;
       this.userData.name = data.body.name ? data.body.name : data.body.login ? data.body.login : '';
       this.userData.login = data.body.login ? data.body.login : '';
@@ -138,12 +137,5 @@ export class HomePageComponent implements OnInit {
     // when page changed to bydeafult scroll page up
     windows.scrollTo(0, 0);
     this.getRepos(this.userData.login, this.utils.itemsPerPage, this.pageSelected);
-  }
-
-  // resest whole - invoke loader, resest var and get user data 
-  resetWhole() {
-    // this.utils.startLoader();
-    // this.resetVar();
-    // this.getUserData();
   }
 }
