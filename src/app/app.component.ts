@@ -1,5 +1,4 @@
 import { AfterViewChecked, ChangeDetectorRef, Component, HostListener } from '@angular/core';
-import { Router } from '@angular/router';
 import { UtilsComponent } from './components/shared/utils/utils.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
@@ -10,13 +9,12 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 export class AppComponent implements AfterViewChecked {
-  constructor(public utils: UtilsComponent, private router: Router, private cdRef: ChangeDetectorRef, private snackBar: MatSnackBar) { }
+  constructor(public utils: UtilsComponent, private cdRef: ChangeDetectorRef, private snackBar: MatSnackBar) { }
   @HostListener('click', ['$event.target'])
   handleKeyDown(event: KeyboardEvent) {
     this.snackBar.dismiss();
   }
   ngOnInit() {
-    // this.router.navigate(["home"]);
   }
 
   // hook used to detect changes in view
